@@ -1,0 +1,36 @@
+﻿@model  IEnumerable<CloudProjectTracking.Models.Project> 
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Project_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Consultant.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contractor.Name)
+        </th>
+    </tr>
+    <tr>
+        @foreach (var item in Model)
+        {
+            <td>
+                <a href="@Url.Action("DashBoard", "Projects",new { id = item.Id })">@Html.LabelFor(e => item.Project_Name)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Consultant.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Contractor.Name)
+            </td>
+        }
+
+
+    </tr>
+</table>

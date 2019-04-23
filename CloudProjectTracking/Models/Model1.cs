@@ -17,10 +17,8 @@ namespace CloudProjectTracking.Models
             : base("name=Model1")
         {
         }
-
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
-
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Consultant> Consultants { get; set; }
@@ -33,10 +31,11 @@ namespace CloudProjectTracking.Models
         public DbSet<RFI> RFIs { get; set; }
         public DbSet<Submitals> Submitals { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
-        public DbSet<Status> Status { get; set; } 
-  
+        public DbSet<Status> Status { get; set; }
+        public DbSet<Tasks_Matrial> Tasks_Matrials { get; set; }
         public DbSet<Task> Tasks { get; set; }
         public DbSet<Task_Notification> Task_Notifications { get; set; }
+        public DbSet<Task_Documents> Task_Documents { get; set; }
     }
 
     //public class MyEntity

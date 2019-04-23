@@ -1,0 +1,68 @@
+﻿@model CloudProjectTracking.ViewModels.ProjectViewModel
+
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Project.Project_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Project.Consultant.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Project.Contractor.Name)
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.Project.Project_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Project.Consultant.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Project.Contractor.Name)
+        </td>
+
+    </tr>
+</table>
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("Task Name")
+        </th>
+        <th>
+            @Html.Label("Cost")
+        </th>
+        <th>
+            @Html.Label("Status")
+        </th>
+    </tr>
+    @foreach (var item in Model.Tasks)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status.CurrentStatus)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit","Tasks", new { id = item.Id }, new { @class = "" }) |
+                @Html.ActionLink("Details", "Details", "Tasks", new { id = item.Id }, new { @class = "" }) |
+                @Html.ActionLink("Delete", "Delete", "Tasks", new { id = item.Id }, new { @class = "" })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -131,20 +131,52 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\TasksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904230949106_IntialMigration.cs" />
-    <Compile Include="Migrations\201904230949106_IntialMigration.Designer.cs">
-      <DependentUpon>201904230949106_IntialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201904231050419_Second.cs" />
+    <Compile Include="Migrations\201904231050419_Second.Designer.cs">
+      <DependentUpon>201904231050419_Second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904231117410_AddTasksMaterialTable.cs" />
+    <Compile Include="Migrations\201904231117410_AddTasksMaterialTable.Designer.cs">
+      <DependentUpon>201904231117410_AddTasksMaterialTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904231133248_DeleteMaterialAttributeFromTask.cs" />
+    <Compile Include="Migrations\201904231133248_DeleteMaterialAttributeFromTask.Designer.cs">
+      <DependentUpon>201904231133248_DeleteMaterialAttributeFromTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904231248023_ss.cs" />
+    <Compile Include="Migrations\201904231248023_ss.Designer.cs">
+      <DependentUpon>201904231248023_ss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904231456052_Equipment_SubContractor.cs" />
+    <Compile Include="Migrations\201904231456052_Equipment_SubContractor.Designer.cs">
+      <DependentUpon>201904231456052_Equipment_SubContractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904231458141_actualDate.cs" />
+    <Compile Include="Migrations\201904231458141_actualDate.Designer.cs">
+      <DependentUpon>201904231458141_actualDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904231616261_equipment_documentfiles.cs" />
+    <Compile Include="Migrations\201904231616261_equipment_documentfiles.Designer.cs">
+      <DependentUpon>201904231616261_equipment_documentfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904231617312_tasssk.cs" />
+    <Compile Include="Migrations\201904231617312_tasssk.Designer.cs">
+      <DependentUpon>201904231617312_tasssk.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entities\Consultant.cs" />
     <Compile Include="Models\Entities\Contractor.cs" />
+    <Compile Include="Models\Entities\Task_Documents.cs" />
     <Compile Include="Models\Entities\Drawing.cs" />
+    <Compile Include="Models\Entities\Equipments.cs" />
     <Compile Include="Models\Entities\Material.cs" />
     <Compile Include="Models\Entities\Order.cs" />
     <Compile Include="Models\Entities\Project.cs" />
@@ -153,12 +185,15 @@
     <Compile Include="Models\Entities\RFI.cs" />
     <Compile Include="Models\Entities\Status.cs" />
     <Compile Include="Models\Entities\Submitals.cs" />
+    <Compile Include="Models\Entities\Sub_Contractor.cs" />
     <Compile Include="Models\Entities\Supplier.cs" />
     <Compile Include="Models\Entities\Supplier_Material.cs" />
     <Compile Include="Models\Entities\Task.cs" />
+    <Compile Include="Models\Entities\Tasks-Matrial.cs" />
     <Compile Include="Models\Entities\Task_Notification.cs" />
     <Compile Include="Models\Model1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ProjectViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -199,16 +234,26 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Tasks\Create.cshtml" />
+    <Content Include="Views\Tasks\Delete.cshtml" />
+    <Content Include="Views\Tasks\Details.cshtml" />
+    <Content Include="Views\Tasks\Edit.cshtml" />
+    <Content Include="Views\Tasks\Index.cshtml" />
+    <Content Include="Views\Projects\Create.cshtml" />
+    <Content Include="Views\Projects\Delete.cshtml" />
+    <Content Include="Views\Projects\Details.cshtml" />
+    <Content Include="Views\Projects\Edit.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\Projects\DashBoard.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Tasks\CreateRFI.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -224,8 +269,29 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904230949106_IntialMigration.resx">
-      <DependentUpon>201904230949106_IntialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904231050419_Second.resx">
+      <DependentUpon>201904231050419_Second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904231117410_AddTasksMaterialTable.resx">
+      <DependentUpon>201904231117410_AddTasksMaterialTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904231133248_DeleteMaterialAttributeFromTask.resx">
+      <DependentUpon>201904231133248_DeleteMaterialAttributeFromTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904231248023_ss.resx">
+      <DependentUpon>201904231248023_ss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904231456052_Equipment_SubContractor.resx">
+      <DependentUpon>201904231456052_Equipment_SubContractor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904231458141_actualDate.resx">
+      <DependentUpon>201904231458141_actualDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904231616261_equipment_documentfiles.resx">
+      <DependentUpon>201904231616261_equipment_documentfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904231617312_tasssk.resx">
+      <DependentUpon>201904231617312_tasssk.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CloudProjectTracking.Models.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,5 +15,6 @@ namespace CloudProjectTracking.Models
         public IList<Project> Projects { get; set; }
         public IList<Task> Tasks { get; set; }
         public IList<RFI> RFIs { get; set; }
+        public ICollection<Sub_Contractor> Sub_Contractors { get; set; }
     }
 }

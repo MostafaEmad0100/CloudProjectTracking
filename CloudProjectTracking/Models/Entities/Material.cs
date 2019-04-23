@@ -11,5 +11,6 @@ namespace CloudProjectTracking.Models
         public string Name { get; set; }
         public IList<Order> Orders { get; set; }
         public IList<Supplier> Suppliers { get; set; }
+        public ICollection<Task> Tasks { get; set; }
     }
 }

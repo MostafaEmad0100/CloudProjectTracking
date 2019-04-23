@@ -11,14 +11,20 @@ namespace CloudProjectTracking.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public float Cost { get; set; }
-        public string Material { get; set; }
+        public string Description { get; set; }
         public Status Status { get; set; }
         public DateTime? Start_Date { get; set; }
         public DateTime? End_Date { get; set; }
+
+        public DateTime? Actual_Start_Date { get; set; }
+        public DateTime? Actual_End_Date { get; set; }
         public Project Project { get; set; }
         public Contractor Contractor { get; set; }
         public IList<Drawing> Drawings { get; set; }
         public IList<RFI> RFIs { get; set; }
         public IList<Report> Reports { get; set; }
+        public ICollection<Material> Materials { get; set; }
+        public ICollection<Equipments> Equipments { get; set; }
+        public ICollection<Task_Documents> Task_Documents { get; set; }
     }
 }
