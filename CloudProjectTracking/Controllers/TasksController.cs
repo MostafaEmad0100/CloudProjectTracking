@@ -19,7 +19,16 @@ namespace CloudProjectTracking.Controllers
         // GET: Tasks
         public ActionResult Index()
         {
+           
+
+           
+            
             return View(db.Tasks.Include(x=>x.Status).ToList());
+        }
+        public ActionResult ProjectDashboard()
+        {
+
+            return View(db.Tasks.Include(x => x.Status).ToList());
         }
 
         // GET: Tasks/Details/5
@@ -190,6 +199,7 @@ namespace CloudProjectTracking.Controllers
 
             return View(RFI);
         }
+        
 
 
 

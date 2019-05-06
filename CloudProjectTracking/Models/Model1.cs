@@ -36,6 +36,7 @@ namespace CloudProjectTracking.Models
         public DbSet<Task> Tasks { get; set; }
         public DbSet<Task_Notification> Task_Notifications { get; set; }
         public DbSet<Task_Documents> Task_Documents { get; set; }
+        public DbSet<Subtasks> Subtasks { get; set; }
     }
 
     //public class MyEntity

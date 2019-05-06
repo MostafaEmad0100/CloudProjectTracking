@@ -1,12 +1,11 @@
-﻿using CloudProjectTracking.Models.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace CloudProjectTracking.Models
+namespace CloudProjectTracking.Models.Entities
 {
-    public class Task
+    public class Subtasks
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -27,27 +26,35 @@ namespace CloudProjectTracking.Models
         public ICollection<Material> Materials { get; set; }
         public ICollection<Equipments> Equipments { get; set; }
         public ICollection<Task_Documents> Task_Documents { get; set; }
-        public IList<Subtasks> Subtasks { get; set; }
         public double Estimated_Duration { get; set; }
-        public double PercentageOfCompleteion { get; set; } 
+        public double PercentageOfCompleteion { get; set; }
         public double SchudulingIndex_SI { get; set; }
         public double CostIndex_CI { get; set; }
         public double ExpectedFinalDuration { get; set; }
         public double ExpectedFinalCost { get; set; }
-        public Task()
+        public Task Task { get; set; }
+        public int FK_Task { get; set; }
+        public Subtasks()
         {
-            List<Task> tasks = new List<Task>()
+            var contractor = new Contractor()
             {
-                new Task{Name="EarthWorks" ,Id=20},
-                new Task {Name="PC-Works" , Id=30 },
-                new Task {Name="RC-Works",Id=40}
+                Id = 10,
+                Name = "Arab Cntractor"
             };
-            Model1 db = new Model1();
-            db.Tasks.AddRange(tasks);
-            db.SaveChanges();
-        }
-       
+            List<Subtasks> subtasks = new List<Subtasks>()
+           {
+               new Subtasks{Name="Excavation" , FK_Task=10 ,
+                   Start_Date = new DateTime(2019,1,1),
+                   End_Date =new DateTime(2019,1,10),BudgetCostWorkSchudling_BCWS=37500,
+                   Contractor=contractor,
 
-      
+                   
+
+
+               },
+
+               
+           };
+        }
     }
 }

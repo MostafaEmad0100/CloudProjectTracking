@@ -167,13 +167,22 @@
     <Compile Include="Migrations\201904231616261_equipment_documentfiles.Designer.cs">
       <DependentUpon>201904231616261_equipment_documentfiles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904231617312_tasssk.cs" />
-    <Compile Include="Migrations\201904231617312_tasssk.Designer.cs">
-      <DependentUpon>201904231617312_tasssk.cs</DependentUpon>
+    <Compile Include="Migrations\201905050003090_Task.cs" />
+    <Compile Include="Migrations\201905050003090_Task.Designer.cs">
+      <DependentUpon>201905050003090_Task.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905051446317_IntialModel.cs" />
+    <Compile Include="Migrations\201905051446317_IntialModel.Designer.cs">
+      <DependentUpon>201905051446317_IntialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905051454472_addforeignKey.cs" />
+    <Compile Include="Migrations\201905051454472_addforeignKey.Designer.cs">
+      <DependentUpon>201905051454472_addforeignKey.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entities\Consultant.cs" />
     <Compile Include="Models\Entities\Contractor.cs" />
+    <Compile Include="Models\Entities\Subtasks.cs" />
     <Compile Include="Models\Entities\Task_Documents.cs" />
     <Compile Include="Models\Entities\Drawing.cs" />
     <Compile Include="Models\Entities\Equipments.cs" />
@@ -202,6 +211,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Images\Image1.jpeg" />
+    <Content Include="Content\Scripts\Script.js" />
+    <Content Include="Content\Styles\Style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -251,6 +263,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Tasks\CreateRFI.cshtml" />
+    <Content Include="Views\Tasks\ProjectDashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\uploads\" />
@@ -290,8 +303,14 @@
     <EmbeddedResource Include="Migrations\201904231616261_equipment_documentfiles.resx">
       <DependentUpon>201904231616261_equipment_documentfiles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904231617312_tasssk.resx">
-      <DependentUpon>201904231617312_tasssk.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905050003090_Task.resx">
+      <DependentUpon>201905050003090_Task.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905051446317_IntialModel.resx">
+      <DependentUpon>201905051446317_IntialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905051454472_addforeignKey.resx">
+      <DependentUpon>201905051454472_addforeignKey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

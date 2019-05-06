@@ -4,6 +4,7 @@ namespace CloudProjectTracking.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using System.Collections.Generic;
 
     internal sealed class Configuration : DbMigrationsConfiguration<CloudProjectTracking.Models.Model1>
     {
@@ -14,10 +15,7 @@ namespace CloudProjectTracking.Migrations
 
         protected override void Seed(CloudProjectTracking.Models.Model1 context)
         {
-            //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
         }
     }
 }

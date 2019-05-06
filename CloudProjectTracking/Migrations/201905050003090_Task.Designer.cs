@@ -7,13 +7,13 @@ namespace CloudProjectTracking.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class tasssk : IMigrationMetadata
+    public sealed partial class Task : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(tasssk));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Task));
         
         string IMigrationMetadata.Id
         {
-            get { return "201904231617312_tasssk"; }
+            get { return "201905050003090_Task"; }
         }
         
         string IMigrationMetadata.Source

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using CloudProjectTracking.Models.Entities;
 
 namespace CloudProjectTracking.Models
 {
@@ -14,5 +15,6 @@ namespace CloudProjectTracking.Models
         public IList<Drawing> Drawings { get; set; }
         public IList<RFI> RFIs { get; set; }
         public IList<Submitals> Submitals { get; set; }
+        public IList<Subtasks> Subtasks { get; set; }
     }
 }

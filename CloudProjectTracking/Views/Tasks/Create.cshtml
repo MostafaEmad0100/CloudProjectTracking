@@ -39,6 +39,7 @@
             </div>
         </div>
 
+
         <div class="form-group">
             @Html.LabelFor(model => model.End_Date, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -46,6 +47,24 @@
                 @Html.ValidationMessageFor(model => model.End_Date, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Actual_Start_Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Actual_Start_Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Actual_Start_Date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Actual_End_Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Actual_End_Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Actual_End_Date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
         <div class="form-group">
             <label for="file1">Drawings</label>
             <div class="col-md-10">
